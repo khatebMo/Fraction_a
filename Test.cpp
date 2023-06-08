@@ -2,7 +2,6 @@
 #include "sources/Fraction.hpp"
 using namespace ariel;
 
-
 TEST_CASE("divide by zero!!")
 {
    CHECK_THROWS(Fraction(3, 0));
@@ -181,4 +180,12 @@ TEST_CASE("Test the <= operator")
    Fraction b(3, 4);
    CHECK(a >= a);
    CHECK(a <= b);
+}
+TEST_CASE("testing operator <<")
+{
+    Fraction a(1, 2);
+   Fraction b(3, 4);
+   Fraction c = a + b;
+   CHECK_NOTHROW(cout << "a: " << a << "b: " << b << "c:" << c);
+   CHECK(a >= a);
 }
